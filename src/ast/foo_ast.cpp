@@ -1,0 +1,47 @@
+    lexique[0]="and"
+    lexique[1]="begin";
+    lexique[2]="else";
+    lexique[3]="elsif";
+    lexique[4]="end";
+    lexique[5]="for";
+    lexique[6]="function";
+    lexique[7]="if";
+    lexique[8]="in";
+    lexique[9]="is";
+    lexique[10]="loop";
+    lexique[11]="not";
+    lexique[12]="null";
+    lexique[13]="or";
+    lexique[14]="out";
+    lexique[15]="procedure";
+    lexique[16]="record";
+    lexique[17]="rem";
+    lexique[18]="return" ;
+    lexique[19]="reverse";
+    lexique[20]="then";
+    lexique[21]="type";
+    lexique[22]="use";
+    lexique[23]="while";
+    lexique[24]="with";
+
+    //opérateur
+    lexique[30]="+";
+    lexique[31]="-";
+    lexique[32]="/";
+    lexique[33]="*";
+    lexique[34]="<";
+    lexique[35]=">";
+    lexique[36]="=";
+    lexique[37]="/=";
+    lexique[38]="<=";
+    lexique[39]=">=";
+    lexique[40]=":=";
+
+    //séparateur
+    lexique[41]=":";
+    lexique[42]=";";
+    lexique[43]="(";
+    lexique[44]=")";
+    lexique[45]=".";
+    lexique[46]=",";
+    lexique[47]="'";

@@ -1,0 +1,20 @@
+Ligne 1;
+Ligne 2;
+Commentaire en dessous; (3)
+
+
+Commentaire au dessus;(6)
+Block en dessous;(7)
+
+ 
+
+Block au dessus;(11)
+Block d'une ligne en dessous;(12)
+
+ 
+Début block sur la même ligne (15)
+ 
+ Fin block sur la même ligne; (17)
+Code à 2 espaces de distance; (18)
+Code à 4 espaces de distance; (19)
+Fin de code; (20)

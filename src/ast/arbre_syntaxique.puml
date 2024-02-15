@@ -1,0 +1,16 @@
+@startuml arbre_syntaxique
+hide methods
+hide attribute
+hide circle
+class root{}
+class child1{}
+root --> child1
+class child2{}
+root --> child2
+class child3{}
+root --> child3
+class child4{}
+child1 --> child4
+class child5{}
+child2 --> child5
+@endmindmap

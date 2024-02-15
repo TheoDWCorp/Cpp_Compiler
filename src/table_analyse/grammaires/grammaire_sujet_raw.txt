@@ -1,0 +1,99 @@
+fichier' -> #include_statement+##procedure_statement#
+include_statement+ -> #include_statement##include_statement+#
+              -> #include_statement#
+include_statement -> with #ident#;use #ident#;
+procedure_statement -> procedure #ident# is #decl+# begin #instr+# end #ident#;
+          ->  procedure #ident# is #decl+# begin #instr+# end;
+          ->  procedure #ident# is begin #instr+# end #ident#;
+          ->  procedure #ident# is begin #instr+# end;
+decl+ -> #decl#
+      -> #decl##decl+#
+decl   -> type #ident#;
+       -> type #ident# is record #champs+# end record;
+       -> #ident_virgule+# : #type# := #expr#;
+       -> #ident_virgule+# : #type#;
+       -> procedure #ident# #params# is #decl+# begin #instr+# end #ident#;
+       -> procedure #ident# #params# is #decl+# begin #instr+# end;
+       -> procedure #ident# #params# is begin #instr+# end #ident#;
+       -> procedure #ident# #params# is begin #instr+# end;
+       -> procedure #ident# is #decl+# begin #instr+# end #ident#;
+       -> procedure #ident# is #decl+# begin #instr+# end;
+       -> procedure #ident# is begin #instr+# end #ident#;
+       -> procedure #ident# is begin #instr+# end;
+       -> function #ident# #params# return #type# is #decl+# begin #instr+# end #ident#;
+       -> function #ident# #params# return #type# is #decl+# begin #instr+# end;
+       -> function #ident# #params# return #type# is begin #instr+# end #ident#;
+       -> function #ident# #params# return #type# is begin #instr+# end;
+       -> function #ident# return #type# is #decl+# begin #instr+# end #ident#;
+       -> function #ident# return #type# is #decl+# begin #instr+# end;
+       -> function #ident# return #type# is begin #instr+# end #ident#;
+       -> function #ident# return #type# is begin #instr+# end;
+champs+ -> #champs#
+        -> #champs##champs+#
+champs -> #ident_virgule+# : #type#;
+type   -> #ident#
+params -> (#param_points_virgule+#)
+param_points_virgule+ -> #param#
+                      -> #param#;#param_points_virgule+#
+param -> #ident_virgule+# : #mode# #type#
+      -> #ident_virgule+# : #type#
+mode   -> in 
+       -> in out
+       -> out
+expr_virgule+ -> #expr#
+              -> #expr#,#expr_virgule+#
+expr   -> #expr1# 
+       -> #expr# or #expr1#
+       -> #expr# or else #expr1#
+expr1  -> #exprp#
+       -> #expr1# and #exprp#
+       -> #expr1# and then #exprp#
+exprp  -> #expr2#
+       -> not(#expr#)
+expr2  -> #expr3#
+       -> #expr2# = #expr3#
+       -> #expr2# /= #expr3#
+expr3  -> #expr4#
+       -> #expr3# < #expr4#
+       -> #expr3# > #expr4#
+       -> #expr3# <= #expr4#
+       -> #expr3# >= #expr4#
+expr4  -> #expr5#
+       -> #expr4# + #expr5#
+       -> #expr4# - #expr5#
+expr5  -> #expr6#
+       -> #expr5# * #expr6#
+       -> #expr5# / #expr6#
+       -> #expr5# rem #expr6#
+expr6  -> 1 
+       -> 'a' 
+       -> true 
+       -> false 
+       -> null
+       -> (#expr#)
+       -> -(#expr#)
+       -> #ident#
+       -> #ident# (#expr_virgule+#)
+       -> character'val (#expr#)
+instr+ -> #instr#
+       -> #instr##instr+#
+elsif_expr_then_instr+ -> #elsif_expr_then_instr#
+                       -> #elsif_expr_then_instr# #elsif_expr_then_instr+#
+elsif_expr_then_instr -> elsif #expr# then #instr+#
+if_expr -> if #expr# then 
+instr   -> #ident# := #expr#;
+        -> #ident#;
+        -> #ident# (#expr_virgule+#);
+        -> return #expr#;
+        -> return;
+        -> begin #instr+# end;
+        -> #if_expr# #instr+# #elsif_expr_then_instr+# else #instr+# end if;
+        -> #if_expr# #instr+# #elsif_expr_then_instr+# end if;
+        -> #if_expr# #instr+# else #instr+# end if;
+        -> #if_expr# #instr+# end if;
+        -> for #ident# in reverse #expr#..#expr# loop #instr+# end loop;
+        -> for #ident# in #expr#..#expr# loop #instr+# end loop;
+        -> while #expr# loop #instr+# end loop;
+ident_virgule+ -> #ident#
+               -> #ident#,#ident_virgule+#
+ident -> identificateur_123_test

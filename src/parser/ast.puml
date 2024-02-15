@@ -1,0 +1,228 @@
+@startuml ast
+hide methods
+hide attribute
+hide circle
+class "0 : root"{}
+class "0 : root"{}
+"0 : root" --> "0 : root"
+class "4 : include_statement"{}
+"0 : root" --> "4 : include_statement"
+class "21 : include_statement"{}
+"0 : root" --> "21 : include_statement"
+class "3 : procedure_statement"{}
+"0 : root" --> "3 : procedure_statement"
+class "15 : with"{}
+"4 : include_statement" --> "15 : with"
+class "16 : ident"{}
+"4 : include_statement" --> "16 : ident"
+class "18 : use"{}
+"4 : include_statement" --> "18 : use"
+class "19 : ident"{}
+"4 : include_statement" --> "19 : ident"
+class "29 : with"{}
+"21 : include_statement" --> "29 : with"
+class "30 : ident"{}
+"21 : include_statement" --> "30 : ident"
+class "32 : use"{}
+"21 : include_statement" --> "32 : use"
+class "33 : ident"{}
+"21 : include_statement" --> "33 : ident"
+class "6 : procedure"{}
+"3 : procedure_statement" --> "6 : procedure"
+class "7 : ident"{}
+"3 : procedure_statement" --> "7 : ident"
+class "8 : is"{}
+"3 : procedure_statement" --> "8 : is"
+class "9 : decl+"{}
+"3 : procedure_statement" --> "9 : decl+"
+class "10 : begin"{}
+"3 : procedure_statement" --> "10 : begin"
+class "25 : instr"{}
+"3 : procedure_statement" --> "25 : instr"
+class "12 : end"{}
+"3 : procedure_statement" --> "12 : end"
+class "13 : ident"{}
+"3 : procedure_statement" --> "13 : ident"
+class "27 : Ada.Text_IO"{}
+"16 : ident" --> "27 : Ada.Text_IO"
+class "28 : Ada.Text_IO"{}
+"19 : ident" --> "28 : Ada.Text_IO"
+class "53 : Ada.Integer_Text_IO"{}
+"30 : ident" --> "53 : Ada.Integer_Text_IO"
+class "54 : Ada.Integer_Text_IO"{}
+"33 : ident" --> "54 : Ada.Integer_Text_IO"
+class "22 : Test"{}
+"7 : ident" --> "22 : Test"
+class "23 : decl"{}
+"9 : decl+" --> "23 : decl"
+class "24 : decl+"{}
+"9 : decl+" --> "24 : decl+"
+class "41 : for"{}
+"25 : instr" --> "41 : for"
+class "42 : ident"{}
+"25 : instr" --> "42 : ident"
+class "43 : in"{}
+"25 : instr" --> "43 : in"
+class "44 : expr"{}
+"25 : instr" --> "44 : expr"
+class "47 : expr"{}
+"25 : instr" --> "47 : expr"
+class "48 : loop"{}
+"25 : instr" --> "48 : loop"
+class "65 : instr"{}
+"25 : instr" --> "65 : instr"
+class "89 : instr"{}
+"25 : instr" --> "89 : instr"
+class "50 : end"{}
+"25 : instr" --> "50 : end"
+class "51 : loop"{}
+"25 : instr" --> "51 : loop"
+class "26 : Test"{}
+"13 : ident" --> "26 : Test"
+class "55 : ident"{}
+"23 : decl" --> "55 : ident"
+class "37 : type"{}
+"23 : decl" --> "37 : type"
+class "39 : decl"{}
+"24 : decl+" --> "39 : decl"
+class "40 : decl+"{}
+"24 : decl+" --> "40 : decl+"
+class "62 : i"{}
+"42 : ident" --> "62 : i"
+class "178 : 1"{}
+"44 : expr" --> "178 : 1"
+class "179 : 10"{}
+"47 : expr" --> "179 : 10"
+class "84 : ident"{}
+"65 : instr" --> "84 : ident"
+class "103 : expr"{}
+"65 : instr" --> "103 : expr"
+class "104 : if_expr"{}
+"89 : instr" --> "104 : if_expr"
+class "125 : instr"{}
+"89 : instr" --> "125 : instr"
+class "106 : else"{}
+"89 : instr" --> "106 : else"
+class "126 : instr"{}
+"89 : instr" --> "126 : instr"
+class "108 : end"{}
+"89 : instr" --> "108 : end"
+class "109 : if"{}
+"89 : instr" --> "109 : if"
+class "67 : bool_var1"{}
+"55 : ident" --> "67 : bool_var1"
+class "56 : ident"{}
+"37 : type" --> "56 : ident"
+class "69 : ident"{}
+"39 : decl" --> "69 : ident"
+class "59 : type"{}
+"39 : decl" --> "59 : type"
+class "61 : decl"{}
+"40 : decl+" --> "61 : decl"
+class "102 : Put"{}
+"84 : ident" --> "102 : Put"
+class "204 : ici"{}
+"103 : expr" --> "204 : ici"
+class "122 : if"{}
+"104 : if_expr" --> "122 : if"
+class "123 : expr"{}
+"104 : if_expr" --> "123 : expr"
+class "124 : then"{}
+"104 : if_expr" --> "124 : then"
+class "142 : ident"{}
+"125 : instr" --> "142 : ident"
+class "144 : expr"{}
+"125 : instr" --> "144 : expr"
+class "146 : ident"{}
+"126 : instr" --> "146 : ident"
+class "148 : expr"{}
+"126 : instr" --> "148 : expr"
+class "68 : Boolean"{}
+"56 : ident" --> "68 : Boolean"
+class "90 : bool_var2"{}
+"69 : ident" --> "90 : bool_var2"
+class "70 : ident"{}
+"59 : type" --> "70 : ident"
+class "71 : function"{}
+"61 : decl" --> "71 : function"
+class "72 : ident"{}
+"61 : decl" --> "72 : ident"
+class "73 : params"{}
+"61 : decl" --> "73 : params"
+class "74 : return"{}
+"61 : decl" --> "74 : return"
+class "75 : type"{}
+"61 : decl" --> "75 : type"
+class "76 : is"{}
+"61 : decl" --> "76 : is"
+class "77 : begin"{}
+"61 : decl" --> "77 : begin"
+class "97 : instr"{}
+"61 : decl" --> "97 : instr"
+class "118 : instr"{}
+"61 : decl" --> "118 : instr"
+class "79 : end"{}
+"61 : decl" --> "79 : end"
+class "80 : ident"{}
+"61 : decl" --> "80 : ident"
+class "189 : >"{}
+"123 : expr" --> "189 : >"
+class "160 : bool_var1"{}
+"142 : ident" --> "160 : bool_var1"
+class "220 : 1"{}
+"144 : expr" --> "220 : 1"
+class "162 : bool_var1"{}
+"146 : ident" --> "162 : bool_var1"
+class "221 : 0"{}
+"148 : expr" --> "221 : 0"
+class "91 : Boolean"{}
+"70 : ident" --> "91 : Boolean"
+class "92 : test_function"{}
+"72 : ident" --> "92 : test_function"
+class "111 : param"{}
+"73 : params" --> "111 : param"
+class "96 : ident"{}
+"75 : type" --> "96 : ident"
+class "113 : ident"{}
+"97 : instr" --> "113 : ident"
+class "132 : expr"{}
+"97 : instr" --> "132 : expr"
+class "154 : expr"{}
+"97 : instr" --> "154 : expr"
+class "135 : return"{}
+"118 : instr" --> "135 : return"
+class "136 : expr"{}
+"118 : instr" --> "136 : expr"
+class "99 : test_function"{}
+"80 : ident" --> "99 : test_function"
+class "219 : 3"{}
+"189 : >" --> "219 : 3"
+class "213 : 7"{}
+"189 : >" --> "213 : 7"
+class "150 : ident"{}
+"111 : param" --> "150 : ident"
+class "129 : mode"{}
+"111 : param" --> "129 : mode"
+class "130 : type"{}
+"111 : param" --> "130 : type"
+class "112 : Boolean"{}
+"96 : ident" --> "112 : Boolean"
+class "131 : Put"{}
+"113 : ident" --> "131 : Put"
+class "216 : ident"{}
+"132 : expr" --> "216 : ident"
+class "223 : 0"{}
+"154 : expr" --> "223 : 0"
+class "218 : 1"{}
+"136 : expr" --> "218 : 1"
+class "164 : x"{}
+"150 : ident" --> "164 : x"
+class "151 : in"{}
+"129 : mode" --> "151 : in"
+class "152 : ident"{}
+"130 : type" --> "152 : ident"
+class "222 : x"{}
+"216 : ident" --> "222 : x"
+class "165 : integer"{}
+"152 : ident" --> "165 : integer"
+@endmindmap

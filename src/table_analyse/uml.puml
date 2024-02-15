@@ -1,0 +1,127 @@
+@startuml Automate
+skinparam roundcorner 20
+skinparam backgroundColor Gainsboro
+
+left header
+
+ <b><font size=20 color=black >  Automate déterministe LALR(1)</font>
+
+endheader
+
+Card Grammaire #white [
+--<b>Grammaire--
+<b>O -> +
+<b>   -> -
+<b>   -> *
+<b>   -> /
+<b>O+ -> O
+<b>     -> OO+
+<b>E -> EO+E
+<b>   -> entier
+<b>E' -> E
+]
+
+Card I0 #white [
+--<b>I0--
+<b>E -> •EO+E  [ - * + / $ ]
+<b>   -> •entier  [ - * + / $ ]
+<b>E' -> •E  [ $ ]
+]
+
+Card I1 #white [
+--<b>I1--
+<b>E -> entier•  [ - * + / $ ]
+]
+
+Card I2 #white [
+--<b>I2--
+<b>O -> •+  [ / - * + entier ]
+<b>   -> •-  [ / - * + entier ]
+<b>   -> •*  [ / - * + entier ]
+<b>   -> •/  [ / - * + entier ]
+<b>E' -> E•  [ $ ]
+<b>O+ -> •O  [ entier ]
+<b>     -> •OO+  [ entier ]
+<b>E -> E•O+E  [ - * + / $ ]
+]
+
+Card I3 #white [
+--<b>I3--
+<b>E -> EO+•E  [ - * + / $ ]
+<b>   -> •EO+E  [ - * + / $ ]
+<b>   -> •entier  [ - * + / $ ]
+]
+
+Card I4 #white [
+--<b>I4--
+<b>O -> •+  [ / - * + entier ]
+<b>   -> •-  [ / - * + entier ]
+<b>   -> •*  [ / - * + entier ]
+<b>   -> •/  [ / - * + entier ]
+<b>O+ -> O•  [ entier ]
+<b>     -> O•O+  [ entier ]
+<b>     -> •O  [ entier ]
+<b>     -> •OO+  [ entier ]
+]
+
+Card I5 #white [
+--<b>I5--
+<b>O -> /•  [ / - * + entier ]
+]
+
+Card I6 #white [
+--<b>I6--
+<b>O -> -•  [ / - * + entier ]
+]
+
+Card I7 #white [
+--<b>I7--
+<b>O -> *•  [ / - * + entier ]
+]
+
+Card I8 #white [
+--<b>I8--
+<b>O -> +•  [ / - * + entier ]
+]
+
+Card I9 #white [
+--<b>I9--
+<b>O -> •+  [ / - * + entier ]
+<b>   -> •-  [ / - * + entier ]
+<b>   -> •*  [ / - * + entier ]
+<b>   -> •/  [ / - * + entier ]
+<b>O+ -> •O  [ entier ]
+<b>     -> •OO+  [ entier ]
+<b>E -> EO+E•  [ - * + / $ ]
+<b>   -> E•O+E  [ - * + / $ ]
+]
+
+Card I10 #white [
+--<b>I10--
+<b>O+ -> OO+•  [ entier ]
+]
+
+I0 --> I1: <b>entier
+I0 --> I2: <b>E
+I2 --> I3: <b>O+
+I2 --> I4: <b>O
+I2 --> I5: <b>/
+I2 --> I6: <b>-
+I2 --> I7: <b>*
+I2 --> I8: <b>+
+I3 --> I1: <b>entier
+I3 --> I9: <b>E
+I4 --> I4: <b>O
+I4 --> I10: <b>O+
+I4 --> I5: <b>/
+I4 --> I6: <b>-
+I4 --> I7: <b>*
+I4 --> I8: <b>+
+I9 --> I3: <b>O+
+I9 --> I4: <b>O
+I9 --> I5: <b>/
+I9 --> I6: <b>-
+I9 --> I7: <b>*
+I9 --> I8: <b>+
+Grammaire -right[hidden]- I0: "                    "
+@enduml
